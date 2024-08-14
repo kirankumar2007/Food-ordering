@@ -89,6 +89,11 @@ const translations = {
         chatWithSupport: 'Chat with Support',
         specialOffers: 'Special Offers',
         claimOffer: 'Claim Offer',
+        reviews: 'Reviews',
+        userReview: 'User Review',
+        tracking: 'Order Tracking',
+        trackOrder: 'Track Order',
+        orderId: 'Order ID:'
     },
     es: {
         profile: 'Tu Perfil',
@@ -102,6 +107,11 @@ const translations = {
         chatWithSupport: 'Chatea con Soporte',
         specialOffers: 'Ofertas Especiales',
         claimOffer: 'Reclamar Oferta',
+        reviews: 'Reseñas',
+        userReview: 'Reseña del Usuario',
+        tracking: 'Seguimiento de Pedido',
+        trackOrder: 'Rastrear Pedido',
+        orderId: 'ID de Pedido:'
     },
     fr: {
         profile: 'Votre Profil',
@@ -115,8 +125,19 @@ const translations = {
         chatWithSupport: 'Chattez avec le Support',
         specialOffers: 'Offres Spéciales',
         claimOffer: 'Réclamer l\'Offre',
+        reviews: 'Avis',
+        userReview: 'Avis Utilisateur',
+        tracking: 'Suivi de Commande',
+        trackOrder: 'Suivre la Commande',
+        orderId: 'ID de Commande:'
     }
 };
 
-// Initialize with the default language
+document.getElementById('trackingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const orderId = document.getElementById('orderId').value;
+    const trackingInfo = document.getElementById('trackingInfo');
+    trackingInfo.classList.remove('hidden');
+});
+
 changeLanguage('en');

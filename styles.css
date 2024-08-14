@@ -23,6 +23,7 @@ header {
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 header h1 {
@@ -46,6 +47,11 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
 }
 
 #settings {
@@ -67,52 +73,50 @@ nav ul li a {
     font-weight: bold;
 }
 
-#profile, #order-form, #contact, #offers {
-    background-color: #ffffff;
-    padding: 2rem;
+#profile, #order-form, #contact, #offers, #reviews, #tracking {
+    background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 90%;
-    width: 600px;
-}
-
-.menu-container, .offer-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.menu-item, .offer-item {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.menu-item:hover, .offer-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+#profile:hover, #order-form:hover, #contact:hover, #offers:hover, #reviews:hover, #tracking:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.menu-item img, .offer-item img {
+.menu-container, .offer-container, .review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu-item, .offer-item, .review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    flex: 1 1 calc(33% - 2rem);
+}
+
+.menu-item:hover, .offer-item:hover, .review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
     width: 100%;
     height: auto;
-}
-
-.menu-info, .offer-info {
-    padding: 1rem;
-    text-align: center;
+    border-radius: 8px;
 }
 
 .menu-info h3, .offer-info h3 {
     margin: 0;
-    color: #ff5722;
+    color: #d32f2f;
 }
 
 .menu-info p, .offer-info p {
@@ -127,10 +131,20 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    resize: none;
 }
 
 #chatbox {
@@ -141,6 +155,7 @@ button:hover {
     height: 200px;
     overflow-y: auto;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #chatInput {
@@ -164,20 +179,34 @@ button:hover {
     background-color: #e64a19;
 }
 
+.review-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 768px) {
     header {
         padding: 1rem;
     }
 
-    #settings {
-        top: 10px;
-        right: 10px;
+    nav ul {
+        flex-direction: column;
     }
 
-    #profile, #order-form, #contact, #offers {
-        padding: 1rem;
-        margin: 1rem;
-        width: auto;
+    nav ul li {
+        margin: 0.5rem 0;
     }
 
     .menu-container, .offer-container {

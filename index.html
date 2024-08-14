@@ -16,6 +16,8 @@
                 <li><a href="#profile">Profile</a></li>
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#offers">Special Offers</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#tracking">Order Tracking</a></li>
             </ul>
         </nav>
         <div id="settings">
@@ -130,6 +132,34 @@
                     <button onclick="claimOffer('Free Dessert with Every Order')">Claim Offer</button>
                 </div>
                 <!-- Additional Offers -->
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>User Reviews</h2>
+            <div class="review-container">
+                <div class="review">
+                    <h3>John Doe</h3>
+                    <p>"Amazing food and great service! Will definitely order again."</p>
+                </div>
+                <div class="review">
+                    <h3>Jane Smith</h3>
+                    <p>"The pizza was delicious, and the delivery was quick. Highly recommend!"</p>
+                </div>
+                <!-- Additional Reviews -->
+            </div>
+        </section>
+
+        <section id="tracking">
+            <h2>Order Tracking</h2>
+            <form id="trackingForm">
+                <label for="orderId">Order ID:</label>
+                <input type="text" id="orderId" placeholder="Enter your order ID" required>
+                <button type="submit">Track Order</button>
+            </form>
+            <div id="trackingInfo" class="hidden">
+                <h3>Order Status:</h3>
+                <p>Your order is currently being prepared and will be delivered shortly.</p>
             </div>
         </section>
     </main>
