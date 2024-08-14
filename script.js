@@ -12,7 +12,13 @@ function updateOrderSummary() {
 
 document.getElementById('orderForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert('Order submitted successfully!');
+    if (orderItems.length === 0) {
+        alert('Please add items to your order before submitting.');
+        return;
+    }
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    alert(`Thank you, ${name}! Your order has been submitted. We will deliver it to ${address}.`);
     // Here you would typically send the order data to the server.
     // For now, just clear the order and form.
     orderItems = [];

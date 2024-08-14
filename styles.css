@@ -1,19 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
-    background-color: #333;
+    background-color: #ff6347;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -24,36 +26,74 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
-#menu {
+section {
     padding: 2rem;
-    background-color: #f4f4f4;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .menu-item {
+    display: flex;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 1rem;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.menu-item img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu-info {
     padding: 1rem;
-    background-color: #fff;
+    flex: 1;
 }
 
-.menu-item h3 {
-    margin: 0;
+.menu-info h3 {
+    margin-top: 0;
 }
 
-.menu-item button {
+.menu-info p {
+    color: #666;
+}
+
+.menu-info span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+button {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #218838;
 }
 
 #order-form {
+    background-color: #f4f4f4;
     padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -64,21 +104,41 @@ form {
 label {
     display: block;
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 input, textarea {
-    width: 100%;
-    padding: 0.5rem;
+    width: calc(100% - 2rem);
+    padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button[type="submit"] {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

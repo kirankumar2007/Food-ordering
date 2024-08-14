@@ -1,14 +1,14 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Ordering</title>
+    <title>Food Ordering - Deluxe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Food Ordering</h1>
+        <h1>Food Ordering Deluxe</h1>
         <nav>
             <ul>
                 <li><a href="#menu">Menu</a></li>
@@ -20,22 +20,49 @@ l<!DOCTYPE html>
     <section id="menu">
         <h2>Our Menu</h2>
         <div class="menu-item">
-            <h3>Pizza</h3>
-            <p>Delicious cheese and tomato pizza.</p>
-            <span>$12.99</span>
-            <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
+            <img src="pizza.jpg" alt="Pizza">
+            <div class="menu-info">
+                <h3>Pizza</h3>
+                <p>Delicious cheese and tomato pizza with a crispy crust.</p>
+                <span>$12.99</span>
+                <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
+            </div>
         </div>
         <div class="menu-item">
-            <h3>Burger</h3>
-            <p>Juicy beef burger with lettuce and tomato.</p>
-            <span>$9.99</span>
-            <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
+            <img src="burger.jpg" alt="Burger">
+            <div class="menu-info">
+                <h3>Burger</h3>
+                <p>Juicy beef burger with lettuce, tomato, and cheese.</p>
+                <span>$9.99</span>
+                <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
+            </div>
         </div>
         <div class="menu-item">
-            <h3>Salad</h3>
-            <p>Fresh garden salad with a variety of veggies.</p>
-            <span>$7.99</span>
-            <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
+            <img src="salad.jpg" alt="Salad">
+            <div class="menu-info">
+                <h3>Salad</h3>
+                <p>Fresh garden salad with a variety of crisp vegetables.</p>
+                <span>$7.99</span>
+                <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="pasta.jpg" alt="Pasta">
+            <div class="menu-info">
+                <h3>Pasta</h3>
+                <p>Italian pasta with a rich tomato sauce and parmesan cheese.</p>
+                <span>$14.99</span>
+                <button onclick="addToOrder('Pasta', 14.99)">Add to Order</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="sushi.jpg" alt="Sushi">
+            <div class="menu-info">
+                <h3>Sushi</h3>
+                <p>Fresh sushi rolls with a variety of fillings and sauces.</p>
+                <span>$15.99</span>
+                <button onclick="addToOrder('Sushi', 15.99)">Add to Order</button>
+            </div>
         </div>
     </section>
 
@@ -43,10 +70,10 @@ l<!DOCTYPE html>
         <h2>Place Your Order</h2>
         <form id="orderForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" placeholder="Enter your name" required>
 
             <label for="address">Address:</label>
-            <input type="text" id="address" required>
+            <input type="text" id="address" placeholder="Enter your address" required>
 
             <label for="items">Ordered Items:</label>
             <textarea id="items" rows="4" readonly></textarea>
@@ -54,6 +81,10 @@ l<!DOCTYPE html>
             <button type="submit">Submit Order</button>
         </form>
     </section>
+
+    <footer>
+        <p>&copy; 2024 Food Ordering Deluxe. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
