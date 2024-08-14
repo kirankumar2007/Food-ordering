@@ -4,6 +4,12 @@ body {
     padding: 0;
     color: #333;
     background-color: #f2f2f2;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
 header {
@@ -14,112 +20,36 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+header .hidden {
+    display: none;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+#settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #ff6347;
-}
-
-section {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-}
-
-h2 {
-    border-bottom: 2px solid #ff4500;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.menu-item {
-    flex: 1 1 calc(33% - 1.5rem);
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
+#settings-panel {
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.menu-item img {
-    width: 150px;
-    height: auto;
-    object-fit: cover;
-}
-
-.menu-info {
     padding: 1rem;
-    flex: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.menu-info h3 {
-    margin-top: 0;
-}
-
-.menu-info p {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.menu-info span {
-    font-size: 1.2rem;
+#settings-panel label {
+    display: block;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #ff4500;
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-#order-form {
+#profile {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
 }
 
 form {
@@ -133,7 +63,7 @@ label {
     font-weight: bold;
 }
 
-input, textarea {
+input, textarea, select {
     width: calc(100% - 2rem);
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -158,75 +88,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
-}
-
-#contact {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-}
-
-.contact-info {
-    margin-bottom: 1.5rem;
-}
-
-#chat {
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#chatbox {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-}
-
-.chat-message {
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.chat-message.bot {
-    background-color: #ff4500;
-    color: white;
-}
-
-.chat-message.user {
-    background-color: #007bff;
-    color: white;
-    text-align: right;
-}
-
-#chatInput {
-    width: calc(100% - 2.5rem);
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#sendMessage {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-#sendMessage:hover {
-    background-color: #218838;
 }
 
 footer {

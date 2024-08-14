@@ -13,10 +13,44 @@
             <ul>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#order-form">Order Now</a></li>
+                <li><a href="#profile">Profile</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
+        <div id="settings">
+            <button onclick="toggleSettings()">⚙️ Settings</button>
+            <div id="settings-panel" class="hidden">
+                <label for="theme">Theme:</label>
+                <select id="theme" onchange="changeTheme(this.value)">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+
+                <label for="language">Language:</label>
+                <select id="language" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+        </div>
     </header>
+
+    <section id="profile">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </section>
 
     <section id="menu">
         <h2>Our Menu</h2>
@@ -39,61 +73,7 @@
                     <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
                 </div>
             </div>
-            <div class="menu-item">
-                <img src="salad.jpg" alt="Salad">
-                <div class="menu-info">
-                    <h3>Salad</h3>
-                    <p>Fresh garden salad with a variety of crisp vegetables.</p>
-                    <span>$7.99</span>
-                    <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="pasta.jpg" alt="Pasta">
-                <div class="menu-info">
-                    <h3>Pasta</h3>
-                    <p>Italian pasta with a rich tomato sauce and parmesan cheese.</p>
-                    <span>$14.99</span>
-                    <button onclick="addToOrder('Pasta', 14.99)">Add to Order</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="sushi.jpg" alt="Sushi">
-                <div class="menu-info">
-                    <h3>Sushi</h3>
-                    <p>Fresh sushi rolls with a variety of fillings and sauces.</p>
-                    <span>$15.99</span>
-                    <button onclick="addToOrder('Sushi', 15.99)">Add to Order</button>
-                </div>
-            </div>
             <!-- Additional Menu Items -->
-            <div class="menu-item">
-                <img src="steak.jpg" alt="Steak">
-                <div class="menu-info">
-                    <h3>Steak</h3>
-                    <p>Grilled steak with a side of mashed potatoes and vegetables.</p>
-                    <span>$19.99</span>
-                    <button onclick="addToOrder('Steak', 19.99)">Add to Order</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="icecream.jpg" alt="Ice Cream">
-                <div class="menu-info">
-                    <h3>Ice Cream</h3>
-                    <p>Creamy vanilla ice cream with chocolate syrup.</p>
-                    <span>$5.99</span>
-                    <button onclick="addToOrder('Ice Cream', 5.99)">Add to Order</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="coffee.jpg" alt="Coffee">
-                <div class="menu-info">
-                    <h3>Coffee</h3>
-                    <p>Freshly brewed coffee to complement your meal.</p>
-                    <span>$2.99</span>
-                    <button onclick="addToOrder('Coffee', 2.99)">Add to Order</button>
-                </div>
-            </div>
         </div>
     </section>
 

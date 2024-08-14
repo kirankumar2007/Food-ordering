@@ -39,10 +39,79 @@ document.getElementById('sendMessage').addEventListener('click', function() {
 });
 
 function addChatMessage(sender, message) {
-    const chatbox = document.getElementById('chatbox');
+      const chatbox = document.getElementById('chatbox');
     const chatMessage = document.createElement('div');
     chatMessage.className = `chat-message ${sender}`;
     chatMessage.textContent = message;
     chatbox.appendChild(chatMessage);
     chatbox.scrollTop = chatbox.scrollHeight;
 }
+
+document.getElementById('profileForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    alert(`Profile updated!\nUsername: ${username}\nEmail: ${email}`);
+    // Here, you would typically send this data to the server to save it.
+    document.getElementById('profileForm').reset();
+});
+
+function toggleSettings() {
+    const settingsPanel = document.getElementById('settings-panel');
+    settingsPanel.classList.toggle('hidden');
+}
+
+function changeTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+}
+
+function changeLanguage(language) {
+    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+    elementsToTranslate.forEach(element => {
+        element.textContent = translations[language][element.getAttribute('data-i18n')];
+    });
+}
+
+const translations = {
+    en: {
+        profile: 'Your Profile',
+        username: 'Username:',
+        email: 'Email:',
+        password: 'Password:',
+        saveChanges: 'Save Changes',
+        menu: 'Our Menu',
+        orderNow: 'Place Your Order',
+        contactUs: 'Contact Us',
+        chatWithSupport: 'Chat with Support',
+    },
+    es: {
+        profile: 'Tu Perfil',
+        username: 'Nombre de usuario:',
+        email: 'Correo electrónico:',
+        password: 'Contraseña:',
+        saveChanges: 'Guardar cambios',
+        menu: 'Nuestro Menú',
+        orderNow: 'Haz Tu Pedido',
+        contactUs: 'Contáctenos',
+        chatWithSupport: 'Chatea con Soporte',
+    },
+    fr: {
+        profile: 'Votre Profil',
+        username: 'Nom d\'utilisateur:',
+        email: 'Email:',
+        password: 'Mot de passe:',
+        saveChanges: 'Enregistrer les modifications',
+        menu: 'Notre Menu',
+        orderNow: 'Passez Votre Commande',
+        contactUs: 'Contactez-Nous',
+        chatWithSupport: 'Chattez avec le Support',
+    }
+};
+
+// Initialize with the default language
+changeLanguage('en');
