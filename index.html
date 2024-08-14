@@ -1,0 +1,60 @@
+l<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Food Ordering</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order-form">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-item">
+            <h3>Pizza</h3>
+            <p>Delicious cheese and tomato pizza.</p>
+            <span>$12.99</span>
+            <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Burger</h3>
+            <p>Juicy beef burger with lettuce and tomato.</p>
+            <span>$9.99</span>
+            <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Salad</h3>
+            <p>Fresh garden salad with a variety of veggies.</p>
+            <span>$7.99</span>
+            <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
+        </div>
+    </section>
+
+    <section id="order-form">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="items">Ordered Items:</label>
+            <textarea id="items" rows="4" readonly></textarea>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
