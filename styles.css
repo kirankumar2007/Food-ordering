@@ -3,13 +3,15 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #f2f2f2;
 }
 
 header {
-    background-color: #ff6347;
+    background-color: #ff4500;
     color: white;
     padding: 1.5rem;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -27,6 +29,13 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ff6347;
 }
 
 section {
@@ -36,22 +45,31 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #ff6347;
+    border-bottom: 2px solid #ff4500;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .menu-item {
+    flex: 1 1 calc(33% - 1.5rem);
     display: flex;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin-bottom: 1rem;
     overflow: hidden;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .menu-item img {
-    width: 200px;
+    width: 150px;
     height: auto;
     object-fit: cover;
 }
@@ -67,12 +85,13 @@ h2 {
 
 .menu-info p {
     color: #666;
+    margin-bottom: 1rem;
 }
 
 .menu-info span {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ff6347;
+    color: #ff4500;
 }
 
 button {
@@ -83,17 +102,24 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #218838;
 }
 
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 #order-form {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
 form {
@@ -127,10 +153,80 @@ button[type="submit"] {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.contact-info {
+    margin-bottom: 1.5rem;
+}
+
+#chat {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chatbox {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.chat-message.bot {
+    background-color: #ff4500;
+    color: white;
+}
+
+.chat-message.user {
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+}
+
+#chatInput {
+    width: calc(100% - 2.5rem);
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#sendMessage {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#sendMessage:hover {
+    background-color: #218838;
 }
 
 footer {

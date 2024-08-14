@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Ordering - Deluxe</title>
+    <title>Food Ordering Deluxe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,55 +13,86 @@
             <ul>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#order-form">Order Now</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="menu">
         <h2>Our Menu</h2>
-        <div class="menu-item">
-            <img src="pizza.jpg" alt="Pizza">
-            <div class="menu-info">
-                <h3>Pizza</h3>
-                <p>Delicious cheese and tomato pizza with a crispy crust.</p>
-                <span>$12.99</span>
-                <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="pizza.jpg" alt="Pizza">
+                <div class="menu-info">
+                    <h3>Pizza</h3>
+                    <p>Delicious cheese and tomato pizza with a crispy crust.</p>
+                    <span>$12.99</span>
+                    <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="burger.jpg" alt="Burger">
-            <div class="menu-info">
-                <h3>Burger</h3>
-                <p>Juicy beef burger with lettuce, tomato, and cheese.</p>
-                <span>$9.99</span>
-                <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
+            <div class="menu-item">
+                <img src="burger.jpg" alt="Burger">
+                <div class="menu-info">
+                    <h3>Burger</h3>
+                    <p>Juicy beef burger with lettuce, tomato, and cheese.</p>
+                    <span>$9.99</span>
+                    <button onclick="addToOrder('Burger', 9.99)">Add to Order</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="salad.jpg" alt="Salad">
-            <div class="menu-info">
-                <h3>Salad</h3>
-                <p>Fresh garden salad with a variety of crisp vegetables.</p>
-                <span>$7.99</span>
-                <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
+            <div class="menu-item">
+                <img src="salad.jpg" alt="Salad">
+                <div class="menu-info">
+                    <h3>Salad</h3>
+                    <p>Fresh garden salad with a variety of crisp vegetables.</p>
+                    <span>$7.99</span>
+                    <button onclick="addToOrder('Salad', 7.99)">Add to Order</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="pasta.jpg" alt="Pasta">
-            <div class="menu-info">
-                <h3>Pasta</h3>
-                <p>Italian pasta with a rich tomato sauce and parmesan cheese.</p>
-                <span>$14.99</span>
-                <button onclick="addToOrder('Pasta', 14.99)">Add to Order</button>
+            <div class="menu-item">
+                <img src="pasta.jpg" alt="Pasta">
+                <div class="menu-info">
+                    <h3>Pasta</h3>
+                    <p>Italian pasta with a rich tomato sauce and parmesan cheese.</p>
+                    <span>$14.99</span>
+                    <button onclick="addToOrder('Pasta', 14.99)">Add to Order</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="sushi.jpg" alt="Sushi">
-            <div class="menu-info">
-                <h3>Sushi</h3>
-                <p>Fresh sushi rolls with a variety of fillings and sauces.</p>
-                <span>$15.99</span>
-                <button onclick="addToOrder('Sushi', 15.99)">Add to Order</button>
+            <div class="menu-item">
+                <img src="sushi.jpg" alt="Sushi">
+                <div class="menu-info">
+                    <h3>Sushi</h3>
+                    <p>Fresh sushi rolls with a variety of fillings and sauces.</p>
+                    <span>$15.99</span>
+                    <button onclick="addToOrder('Sushi', 15.99)">Add to Order</button>
+                </div>
+            </div>
+            <!-- Additional Menu Items -->
+            <div class="menu-item">
+                <img src="steak.jpg" alt="Steak">
+                <div class="menu-info">
+                    <h3>Steak</h3>
+                    <p>Grilled steak with a side of mashed potatoes and vegetables.</p>
+                    <span>$19.99</span>
+                    <button onclick="addToOrder('Steak', 19.99)">Add to Order</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="icecream.jpg" alt="Ice Cream">
+                <div class="menu-info">
+                    <h3>Ice Cream</h3>
+                    <p>Creamy vanilla ice cream with chocolate syrup.</p>
+                    <span>$5.99</span>
+                    <button onclick="addToOrder('Ice Cream', 5.99)">Add to Order</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="coffee.jpg" alt="Coffee">
+                <div class="menu-info">
+                    <h3>Coffee</h3>
+                    <p>Freshly brewed coffee to complement your meal.</p>
+                    <span>$2.99</span>
+                    <button onclick="addToOrder('Coffee', 2.99)">Add to Order</button>
+                </div>
             </div>
         </div>
     </section>
@@ -75,11 +106,31 @@
             <label for="address">Address:</label>
             <input type="text" id="address" placeholder="Enter your address" required>
 
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" required>
+
             <label for="items">Ordered Items:</label>
             <textarea id="items" rows="4" readonly></textarea>
 
             <button type="submit">Submit Order</button>
         </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>For inquiries or support, feel free to reach out to us:</p>
+            <p>Email: support@foodorderingdeluxe.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+        <div id="chat">
+            <h3>Chat with Support</h3>
+            <div id="chatbox">
+                <div class="chat-message bot">Hello! How can I assist you today?</div>
+            </div>
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+        </div>
     </section>
 
     <footer>
