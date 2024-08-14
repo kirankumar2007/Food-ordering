@@ -20,7 +20,6 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     const address = document.getElementById('address').value;
     const phone = document.getElementById('phone').value;
     alert(`Thank you, ${name}! Your order has been submitted. We will deliver it to ${address}.`);
-    // Send the order data to the server (not implemented)
     orderItems = [];
     updateOrderSummary();
     document.getElementById('orderForm').reset();
@@ -39,7 +38,7 @@ document.getElementById('sendMessage').addEventListener('click', function() {
 });
 
 function addChatMessage(sender, message) {
-      const chatbox = document.getElementById('chatbox');
+    const chatbox = document.getElementById('chatbox');
     const chatMessage = document.createElement('div');
     chatMessage.className = `chat-message ${sender}`;
     chatMessage.textContent = message;
@@ -53,7 +52,6 @@ document.getElementById('profileForm').addEventListener('submit', function(event
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     alert(`Profile updated!\nUsername: ${username}\nEmail: ${email}`);
-    // Here, you would typically send this data to the server to save it.
     document.getElementById('profileForm').reset();
 });
 
@@ -63,11 +61,8 @@ function toggleSettings() {
 }
 
 function changeTheme(theme) {
-    if (theme === 'dark') {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
+    document.body.classList.remove('light', 'dark', 'colorful');
+    document.body.classList.add(theme);
 }
 
 function changeLanguage(language) {
