@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Ordering Premium</title>
+    <title>Food Ordering Ultimate</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <header>
-        <h1>Food Ordering Premium</h1>
+        <h1>Food Ordering Ultimate</h1>
         <nav>
             <ul>
                 <li><a href="#menu">Menu</a></li>
@@ -18,6 +19,7 @@
                 <li><a href="#offers">Special Offers</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#tracking">Order Tracking</a></li>
+                <li><a href="#loyalty">Loyalty Rewards</a></li>
             </ul>
         </nav>
         <div id="settings">
@@ -28,6 +30,7 @@
                     <option value="light">Light</option>
                     <option value="dark">Dark</option>
                     <option value="colorful">Colorful</option>
+                    <option value="vibrant">Vibrant</option>
                 </select>
 
                 <label for="language">Language:</label>
@@ -35,6 +38,7 @@
                     <option value="en">English</option>
                     <option value="es">Español</option>
                     <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
                 </select>
             </div>
         </div>
@@ -59,8 +63,9 @@
 
         <section id="menu">
             <h2>Our Menu</h2>
+            <input type="text" id="search" placeholder="Search menu items..." onkeyup="filterMenu()">
             <div class="menu-container">
-                <div class="menu-item">
+                <div class="menu-item" data-category="pizza">
                     <img src="pizza.jpg" alt="Pizza">
                     <div class="menu-info">
                         <h3>Pizza</h3>
@@ -69,7 +74,7 @@
                         <button onclick="addToOrder('Pizza', 12.99)">Add to Order</button>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-category="burger">
                     <img src="burger.jpg" alt="Burger">
                     <div class="menu-info">
                         <h3>Burger</h3>
@@ -105,7 +110,7 @@
             <h2>Contact Us</h2>
             <div class="contact-info">
                 <p>For inquiries or support, feel free to reach out to us:</p>
-                <p>Email: support@foodorderingpremium.com</p>
+                <p>Email: support@foodorderingultimate.com</p>
                 <p>Phone: +1 234 567 890</p>
             </div>
             <div id="chat">
@@ -162,10 +167,19 @@
                 <p>Your order is currently being prepared and will be delivered shortly.</p>
             </div>
         </section>
+
+        <section id="loyalty">
+            <h2>Loyalty Rewards</h2>
+            <div class="loyalty-info">
+                <p>Earn points with every purchase and redeem them for discounts or free items!</p>
+                <p>Your current points: <span id="loyaltyPoints">120</span></p>
+                <button onclick="redeemPoints()">Redeem Points</button>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Food Ordering Premium. All rights reserved.</p>
+        <p>&copy; 2024 Food Ordering Ultimate. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

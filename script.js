@@ -1,4 +1,5 @@
 let orderItems = [];
+let loyaltyPoints = 120;
 
 function addToOrder(item, price) {
     orderItems.push({ item, price });
@@ -61,19 +62,42 @@ function toggleSettings() {
 }
 
 function changeTheme(theme) {
-    document.body.classList.remove('light', 'dark', 'colorful');
+    document.body.classList.remove('light', 'dark', 'colorful', 'vibrant');
     document.body.classList.add(theme);
 }
 
 function changeLanguage(language) {
     const elementsToTranslate = document.querySelectorAll('[data-i18n]');
     elementsToTranslate.forEach(element => {
-        element.textContent = translations[language][element.getAttribute('data-i18n')];
+        element.textContent = translations[language][element.getAttribute('data-i18n')] || element.textContent;
     });
 }
 
 function claimOffer(offer) {
     alert(`You've claimed the offer: ${offer}. Enjoy your discount!`);
+}
+
+function redeemPoints() {
+    if (loyaltyPoints >= 100) {
+        loyaltyPoints -= 100;
+        alert('You have redeemed 100 points for a discount!');
+        document.getElementById('loyaltyPoints').textContent = loyaltyPoints;
+    } else {
+        alert('Not enough points to redeem.');
+    }
+}
+
+function filterMenu() {
+    const search = document.getElementById('search').value.toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const name = item.querySelector('.menu-info h3').textContent.toLowerCase();
+        if (name.includes(search)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
 
 const translations = {
@@ -93,51 +117,31 @@ const translations = {
         userReview: 'User Review',
         tracking: 'Order Tracking',
         trackOrder: 'Track Order',
-        orderId: 'Order ID:'
+        orderId: 'Order ID:',
+        loyalty: 'Loyalty Rewards',
+        currentPoints: 'Your current points:',
+        redeemPoints: 'Redeem Points'
     },
     es: {
         profile: 'Tu Perfil',
-        username: 'Nombre de usuario:',
-        email: 'Correo electrónico:',
+        username: 'Nombre de Usuario:',
+        email: 'Correo Electrónico:',
         password: 'Contraseña:',
-        saveChanges: 'Guardar cambios',
+        saveChanges: 'Guardar Cambios',
         menu: 'Nuestro Menú',
-        orderNow: 'Haz Tu Pedido',
-        contactUs: 'Contáctenos',
+        orderNow: 'Realiza tu Pedido',
+        contactUs: 'Contáctanos',
         chatWithSupport: 'Chatea con Soporte',
         specialOffers: 'Ofertas Especiales',
         claimOffer: 'Reclamar Oferta',
         reviews: 'Reseñas',
         userReview: 'Reseña del Usuario',
-        tracking: 'Seguimiento de Pedido',
+        tracking: 'Seguimiento de Pedidos',
         trackOrder: 'Rastrear Pedido',
-        orderId: 'ID de Pedido:'
+        orderId: 'ID de Pedido:',
+        loyalty: 'Recompensas de Lealtad',
+        currentPoints: 'Tus puntos actuales:',
+        redeemPoints: 'Canjear Puntos'
     },
-    fr: {
-        profile: 'Votre Profil',
-        username: 'Nom d\'utilisateur:',
-        email: 'Email:',
-        password: 'Mot de passe:',
-        saveChanges: 'Enregistrer les modifications',
-        menu: 'Notre Menu',
-        orderNow: 'Passez Votre Commande',
-        contactUs: 'Contactez-Nous',
-        chatWithSupport: 'Chattez avec le Support',
-        specialOffers: 'Offres Spéciales',
-        claimOffer: 'Réclamer l\'Offre',
-        reviews: 'Avis',
-        userReview: 'Avis Utilisateur',
-        tracking: 'Suivi de Commande',
-        trackOrder: 'Suivre la Commande',
-        orderId: 'ID de Commande:'
-    }
+    // Add more languages as needed
 };
-
-document.getElementById('trackingForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const orderId = document.getElementById('orderId').value;
-    const trackingInfo = document.getElementById('trackingInfo');
-    trackingInfo.classList.remove('hidden');
-});
-
-changeLanguage('en');
