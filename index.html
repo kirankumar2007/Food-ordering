@@ -15,6 +15,7 @@
                 <li><a href="#order-form">Order Now</a></li>
                 <li><a href="#profile">Profile</a></li>
                 <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#offers">Special Offers</a></li>
             </ul>
         </nav>
         <div id="settings">
@@ -112,6 +113,23 @@
                 </div>
                 <input type="text" id="chatInput" placeholder="Type your message...">
                 <button id="sendMessage">Send</button>
+            </div>
+        </section>
+
+        <section id="offers">
+            <h2>Special Offers</h2>
+            <div class="offer-container">
+                <div class="offer-item">
+                    <h3>Weekend Pizza Special</h3>
+                    <p>Buy one pizza and get the second one at 50% off! Valid this weekend only.</p>
+                    <button onclick="claimOffer('Weekend Pizza Special')">Claim Offer</button>
+                </div>
+                <div class="offer-item">
+                    <h3>Free Dessert with Every Order</h3>
+                    <p>Get a free dessert with every order above $30. Enjoy your treat!</p>
+                    <button onclick="claimOffer('Free Dessert with Every Order')">Claim Offer</button>
+                </div>
+                <!-- Additional Offers -->
             </div>
         </section>
     </main>

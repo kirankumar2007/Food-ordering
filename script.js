@@ -72,6 +72,10 @@ function changeLanguage(language) {
     });
 }
 
+function claimOffer(offer) {
+    alert(`You've claimed the offer: ${offer}. Enjoy your discount!`);
+}
+
 const translations = {
     en: {
         profile: 'Your Profile',
@@ -83,6 +87,8 @@ const translations = {
         orderNow: 'Place Your Order',
         contactUs: 'Contact Us',
         chatWithSupport: 'Chat with Support',
+        specialOffers: 'Special Offers',
+        claimOffer: 'Claim Offer',
     },
     es: {
         profile: 'Tu Perfil',
@@ -94,6 +100,8 @@ const translations = {
         orderNow: 'Haz Tu Pedido',
         contactUs: 'Contáctenos',
         chatWithSupport: 'Chatea con Soporte',
+        specialOffers: 'Ofertas Especiales',
+        claimOffer: 'Reclamar Oferta',
     },
     fr: {
         profile: 'Votre Profil',
@@ -105,6 +113,8 @@ const translations = {
         orderNow: 'Passez Votre Commande',
         contactUs: 'Contactez-Nous',
         chatWithSupport: 'Chattez avec le Support',
+        specialOffers: 'Offres Spéciales',
+        claimOffer: 'Réclamer l\'Offre',
     }
 };
 
