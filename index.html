@@ -5,95 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodXOrder</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="FoodXOrder Logo">
-            <h1>FoodXOrder</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ8JIwobDv1bDxu1v2Nver2VKYMxm3zdU_wg&s" alt="FoodXOrder Logo">
+        </div>
+        <div class="location">
+            <select id="location-selector">
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
         </div>
         <nav>
             <ul>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#cart">Cart</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#support">Support</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#" id="cart-btn">Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="menu" class="menu-section">
-        <h2>Our Menu</h2>
-        <div class="menu-container">
-            <!-- Menu items added dynamically via JavaScript -->
-        </div>
-    </section>
-
-    <section id="cart" class="cart-section">
-        <h2>Your Cart</h2>
-        <div class="cart-container">
-            <!-- Cart items added dynamically via JavaScript -->
-        </div>
-        <div class="cart-total">
-            <h3>Total: $0.00</h3>
-            <button onclick="checkout()">Proceed to Checkout</button>
-        </div>
-    </section>
-
-    <section id="coupons" class="coupons-section">
-        <h2>Available Coupons</h2>
-        <div class="coupons-container">
-            <div class="coupon">
-                <p>Coupon Code: SAVE20</p>
-                <p>Discount: 20% off</p>
+    <main>
+        <section class="food-items">
+            <h2>What's on your mind?</h2>
+            <div class="items-grid">
+                <!-- Sample Item -->
+                <div class="food-item">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Biryani">
+                    <h3>Biryani</h3>
+                    <p>₹150</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <div class="food-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIVTfTUulYU6FVcWkFzK3oRQ4RhPH2-nqrA&s" alt="pizza">
+                    <h3>pizza</h3>
+                    <p>₹124</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <div class="food-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTderaoZ9wdyXOZqN3GTU7WCxURswULl9_i2g&s" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>₹89</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <div class="food-item">
+                    <img src="https://i0.wp.com/kalimirchbysmita.com/wp-content/uploads/2019/10/Chole-Bhature-01.jpg?fit=1024%2C682&ssl=1" alt="Chole bature">
+                    <h3>chole bature</h3>
+                    <p>₹190</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <div class="food-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQExqS9SOxlSlEAPa5zb4AYm90NyvpaxFuuxw&s" alt="pasta">
+                    <h3>pasta</h3>
+                    <p>₹100</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <div class="food-item">
+                    <img src="https://i.ytimg.com/vi/8gJgnrxpKUw/maxresdefault.jpg" alt="dal chawal">
+                    <h3>dal chawal</h3>
+                    <p>₹85</p>
+                    <button class="add-to-cart" data-item="Biryani" data-price="150">Add to Cart</button>
+                </div>
+                <!-- Add more food items here like pizza, burger, etc. -->
             </div>
-            <div class="coupon">
-                <p>Coupon Code: BOGO50</p>
-                <p>Discount: Buy 1 Get 1 50% off</p>
-            </div>
-            <!-- Add more coupons -->
-        </div>
-    </section>
+        </section>
 
-    <section id="payment-methods" class="payment-methods-section">
-        <h2>Payment Methods</h2>
-        <div class="payment-container">
-            <div class="payment-method">
-                <img src="credit-card.png" alt="Credit/Debit Card">
-                <p>Credit/Debit Card</p>
+        <section class="offers">
+            <h2>Offers and Coupons</h2>
+            <div class="offer-banner">
+                <p>Use code <strong>FOOD50</strong> to get 50% off on your first order!</p>
             </div>
-            <div class="payment-method">
-                <img src="paypal.png" alt="PayPal">
-                <p>PayPal</p>
+           <div class="offer-banner">
+                <p>Use code <strong>2024food</strong> to get 20% off on your first order!</p>
             </div>
-            <div class="payment-method">
-                <img src="upi.png" alt="UPI">
-                <p>UPI</p>
+           <div class="offer-banner">
+                <p>Use code <strong>hoorayIndia</strong> to get 42% off on your first order!</p>
             </div>
-            <!-- Add more payment methods -->
-        </div>
-    </section>
-
-    <section id="profile" class="profile-section">
-        <h2>Your Profile</h2>
-        <div class="profile-container">
-            <!-- Profile details added dynamically via JavaScript -->
-        </div>
-    </section>
-
-    <section id="support" class="support-section">
-        <h2>Customer Support</h2>
-        <p>Email us at: support@foodxorder.com</p>
-        <div class="social-media">
-            <a href="https://twitter.com/foodxorder" target="_blank">Twitter</a>
-            <a href="https://facebook.com/foodxorder" target="_blank">Facebook</a>
-            <a href="https://instagram.com/foodxorder" target="_blank">Instagram</a>
-        </div>
-    </section>
+            <!-- Add more offer banners here -->
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 FoodXOrder. All rights reserved.</p>
+        <div class="footer-info">
+            <p>&copy; 2024 FoodXOrder. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

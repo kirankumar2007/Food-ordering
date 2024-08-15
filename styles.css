@@ -1,99 +1,117 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+/* styles.css */
+
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 2rem;
+    background-color: #ff6f00;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo img {
-    width: 50px;
-    margin-right: 10px;
+    height: 50px;
 }
 
-header nav ul {
+.location select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+nav ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    gap: 2rem;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1.1rem;
 }
 
-.menu-section, .cart-section, .coupons-section, .payment-methods-section, .profile-section, .support-section {
-    padding: 2rem;
-    background-color: #ffffff;
-    margin: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.main {
+    padding: 20px;
+}
+
+.food-items h2,
+.offers h2 {
+    margin-bottom: 20px;
+    color: #ff6f00;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.food-item {
+    background-color: white;
+    padding: 15px;
     border-radius: 10px;
-    animation: fadeInUp 1s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.menu-container, .cart-container, .coupons-container, .payment-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.menu-item, .cart-item, .coupon, .payment-method {
-    width: 30%;
-    background-color: #fafafa;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-}
-
-.menu-item img, .cart-item img, .payment-method img {
-    width: 100%;
+.food-item img {
+    max-width: 100%;
     border-radius: 10px;
 }
 
-.menu-item h3, .cart-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.food-item h3 {
+    margin: 10px 0;
 }
 
-.coupon p, .payment-method p {
-    margin: 0.5rem 0;
-    font-weight: bold;
+.food-item button {
+    background-color: #ff6f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.cart-total {
-    text-align: right;
-    font-size: 1.2rem;
-    margin-top: 2rem;
+.food-item button:hover {
+    background-color: #e65c00;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.offer-banner {
+    background-color: #ffd700;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    animation: fadeIn 2s ease-in-out infinite alternate;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.footer-info {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-links a {
+    color: #ff6f00;
+    margin: 0 5px;
+    text-decoration: none;
 }
