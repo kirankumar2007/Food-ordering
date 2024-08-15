@@ -3,143 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gourmet Bliss</title>
+    <title>FoodXOrder</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
-<body class="fresh-look">
-
-    <header class="sticky-header">
+<body>
+    <header>
         <div class="logo">
-            <img src="logo.svg" alt="Gourmet Bliss Logo">
+            <img src="logo.png" alt="FoodXOrder Logo">
+            <h1>FoodXOrder</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#offers">Offers</a></li>
-                <li><a href="#wishlist">Wishlist</a></li>
                 <li><a href="#cart">Cart</a></li>
                 <li><a href="#profile">Profile</a></li>
-                <li><a href="#track">Track Order</a></li>
+                <li><a href="#support">Support</a></li>
             </ul>
-            <div id="settings">
-                <i class="fas fa-cog" onclick="toggleSettings()"></i>
-            </div>
         </nav>
     </header>
 
-    <div id="settings-panel" class="hidden">
-        <h3>Settings</h3>
-        <label for="theme">Theme:</label>
-        <select id="theme" onchange="changeTheme(this.value)">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="colorful">Colorful</option>
-            <option value="fresh-look">Fresh Look</option>
-        </select>
-
-        <label for="language">Language:</label>
-        <select id="language" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <!-- Add more languages -->
-        </select>
-    </div>
-
-    <section id="dashboard" class="dashboard-container">
-        <h2>Welcome Back!</h2>
-        <div class="summary">
-            <div class="order-summary">
-                <h3>Recent Orders</h3>
-                <!-- Recent orders will be dynamically loaded -->
-            </div>
-            <div class="favorites-summary">
-                <h3>Your Favorites</h3>
-                <!-- Favorite items will be dynamically loaded -->
-            </div>
-            <div class="offers-summary">
-                <h3>Special Offers for You</h3>
-                <!-- Offers tailored to the user -->
-            </div>
-        </div>
-    </section>
-
-    <section id="profile" class="profile-container">
-        <h2>Your Profile</h2>
-        <div class="profile-details">
-            <div class="profile-image">
-                <img id="profilePic" src="default-avatar.png" alt="Profile Image">
-                <input type="file" id="uploadProfilePic" onchange="uploadProfilePic()">
-            </div>
-            <div class="profile-info">
-                <label for="userName">Name:</label>
-                <input type="text" id="userName" placeholder="John Doe">
-                
-                <label for="userEmail">Email:</label>
-                <input type="email" id="userEmail" placeholder="john@example.com">
-
-                <label for="userLocation">Location:</label>
-                <input type="text" id="userLocation" placeholder="New York, USA">
-
-                <label for="userDOB">Date of Birth:</label>
-                <input type="date" id="userDOB">
-                
-                <!-- More fields can be added here -->
-                <button onclick="saveProfile()">Save Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu" class="menu-container">
+    <section id="menu" class="menu-section">
         <h2>Our Menu</h2>
-        <input type="text" id="search" placeholder="Search Menu..." onkeyup="filterMenu()">
-        <!-- Menu items with images -->
-        <div class="menu-item">
-            <img src="pizza.jpg" alt="Pizza">
-            <h3 class="item-name">Margherita Pizza</h3>
-            <p class="item-description">Classic pizza with fresh tomatoes, mozzarella cheese, and basil.</p>
-            <p class="item-price">$12.99</p>
-            <button onclick="addToCart('Margherita Pizza', 12.99)">Add to Cart</button>
+        <div class="menu-container">
+            <!-- Menu items added dynamically via JavaScript -->
         </div>
-        <!-- More menu items -->
     </section>
 
-    <section id="cart" class="cart-container">
+    <section id="cart" class="cart-section">
         <h2>Your Cart</h2>
-        <!-- Cart items -->
-        <div class="cart-item">
-            <img src="burger.jpg" alt="Burger">
-            <h3 class="item-name">Cheeseburger</h3>
-            <p class="item-price">$9.99</p>
-            <input type="number" value="1" min="1" onchange="updateCartItem('Cheeseburger', this.value)">
-            <button onclick="removeFromCart('Cheeseburger')">Remove</button>
+        <div class="cart-container">
+            <!-- Cart items added dynamically via JavaScript -->
         </div>
-        <!-- More cart items -->
         <div class="cart-total">
-            <h3>Total: $22.98</h3>
-            <button onclick="checkout()">Checkout</button>
+            <h3>Total: $0.00</h3>
+            <button onclick="checkout()">Proceed to Checkout</button>
         </div>
     </section>
 
-    <section id="track">
-        <h2>Track Your Order</h2>
-        <div class="tracking-container">
-            <input type="text" id="orderId" placeholder="Enter Order ID">
-            <button onclick="trackOrder()">Track</button>
-            <div id="trackingDetails"></div>
+    <section id="coupons" class="coupons-section">
+        <h2>Available Coupons</h2>
+        <div class="coupons-container">
+            <div class="coupon">
+                <p>Coupon Code: SAVE20</p>
+                <p>Discount: 20% off</p>
+            </div>
+            <div class="coupon">
+                <p>Coupon Code: BOGO50</p>
+                <p>Discount: Buy 1 Get 1 50% off</p>
+            </div>
+            <!-- Add more coupons -->
+        </div>
+    </section>
+
+    <section id="payment-methods" class="payment-methods-section">
+        <h2>Payment Methods</h2>
+        <div class="payment-container">
+            <div class="payment-method">
+                <img src="credit-card.png" alt="Credit/Debit Card">
+                <p>Credit/Debit Card</p>
+            </div>
+            <div class="payment-method">
+                <img src="paypal.png" alt="PayPal">
+                <p>PayPal</p>
+            </div>
+            <div class="payment-method">
+                <img src="upi.png" alt="UPI">
+                <p>UPI</p>
+            </div>
+            <!-- Add more payment methods -->
+        </div>
+    </section>
+
+    <section id="profile" class="profile-section">
+        <h2>Your Profile</h2>
+        <div class="profile-container">
+            <!-- Profile details added dynamically via JavaScript -->
+        </div>
+    </section>
+
+    <section id="support" class="support-section">
+        <h2>Customer Support</h2>
+        <p>Email us at: support@foodxorder.com</p>
+        <div class="social-media">
+            <a href="https://twitter.com/foodxorder" target="_blank">Twitter</a>
+            <a href="https://facebook.com/foodxorder" target="_blank">Facebook</a>
+            <a href="https://instagram.com/foodxorder" target="_blank">Instagram</a>
         </div>
     </section>
 
     <footer>
-        <div class="social-media">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-        </div>
-        <p>&copy; 2024 Gourmet Bliss. All rights reserved.</p>
+        <p>&copy; 2024 FoodXOrder. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
