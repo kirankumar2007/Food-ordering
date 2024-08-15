@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="vibrant">
+<body class="fresh-look">
 
     <header class="sticky-header">
         <div class="logo">
@@ -19,9 +19,9 @@
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#offers">Offers</a></li>
                 <li><a href="#wishlist">Wishlist</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#profile">Profile</a></li>
                 <li><a href="#track">Track Order</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#customize">Customize Home</a></li>
             </ul>
             <div id="settings">
                 <i class="fas fa-cog" onclick="toggleSettings()"></i>
@@ -36,7 +36,7 @@
             <option value="light">Light</option>
             <option value="dark">Dark</option>
             <option value="colorful">Colorful</option>
-            <option value="vibrant">Vibrant</option>
+            <option value="fresh-look">Fresh Look</option>
         </select>
 
         <label for="language">Language:</label>
@@ -54,10 +54,9 @@
                 <h3>Recent Orders</h3>
                 <!-- Recent orders will be dynamically loaded -->
             </div>
-            <div class="loyalty-summary">
-                <h3>Your Points</h3>
-                <p>Current Points: 120</p>
-                <button onclick="redeemPoints()">Redeem</button>
+            <div class="favorites-summary">
+                <h3>Your Favorites</h3>
+                <!-- Favorite items will be dynamically loaded -->
             </div>
             <div class="offers-summary">
                 <h3>Special Offers for You</h3>
@@ -66,22 +65,61 @@
         </div>
     </section>
 
+    <section id="profile" class="profile-container">
+        <h2>Your Profile</h2>
+        <div class="profile-details">
+            <div class="profile-image">
+                <img id="profilePic" src="default-avatar.png" alt="Profile Image">
+                <input type="file" id="uploadProfilePic" onchange="uploadProfilePic()">
+            </div>
+            <div class="profile-info">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" placeholder="John Doe">
+                
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" placeholder="john@example.com">
+
+                <label for="userLocation">Location:</label>
+                <input type="text" id="userLocation" placeholder="New York, USA">
+
+                <label for="userDOB">Date of Birth:</label>
+                <input type="date" id="userDOB">
+                
+                <!-- More fields can be added here -->
+                <button onclick="saveProfile()">Save Profile</button>
+            </div>
+        </div>
+    </section>
+
     <section id="menu" class="menu-container">
         <h2>Our Menu</h2>
         <input type="text" id="search" placeholder="Search Menu..." onkeyup="filterMenu()">
-        <button onclick="startVoiceSearch()"><i class="fas fa-microphone"></i> Voice Search</button>
-        <!-- Menu items -->
-        <!-- More menu items to follow -->
+        <!-- Menu items with images -->
+        <div class="menu-item">
+            <img src="pizza.jpg" alt="Pizza">
+            <h3 class="item-name">Margherita Pizza</h3>
+            <p class="item-description">Classic pizza with fresh tomatoes, mozzarella cheese, and basil.</p>
+            <p class="item-price">$12.99</p>
+            <button onclick="addToCart('Margherita Pizza', 12.99)">Add to Cart</button>
+        </div>
+        <!-- More menu items -->
     </section>
 
-    <section id="wishlist" class="wishlist-container">
-        <h2>Your Wishlist</h2>
-        <!-- Wishlist items -->
-    </section>
-
-    <section id="offers" class="offer-container">
-        <h2>Special Offers</h2>
-        <!-- Offer items -->
+    <section id="cart" class="cart-container">
+        <h2>Your Cart</h2>
+        <!-- Cart items -->
+        <div class="cart-item">
+            <img src="burger.jpg" alt="Burger">
+            <h3 class="item-name">Cheeseburger</h3>
+            <p class="item-price">$9.99</p>
+            <input type="number" value="1" min="1" onchange="updateCartItem('Cheeseburger', this.value)">
+            <button onclick="removeFromCart('Cheeseburger')">Remove</button>
+        </div>
+        <!-- More cart items -->
+        <div class="cart-total">
+            <h3>Total: $22.98</h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
     </section>
 
     <section id="track">
