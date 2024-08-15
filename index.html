@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Haven</title>
+    <title>Gourmet Bliss</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="light">
+<body class="vibrant">
 
-    <header>
+    <header class="sticky-header">
         <div class="logo">
-            <img src="logo.png" alt="Foodie Haven Logo">
+            <img src="logo.svg" alt="Gourmet Bliss Logo">
         </div>
         <nav>
             <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#offers">Offers</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
                 <li><a href="#track">Track Order</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#customize">Customize Home</a></li>
             </ul>
             <div id="settings">
                 <i class="fas fa-cog" onclick="toggleSettings()"></i>
@@ -45,32 +47,41 @@
         </select>
     </div>
 
-    <section id="banner">
-        <div class="promo">
-            <h2>Get 20% off on your first order!</h2>
-            <p>Use code: FIRST20</p>
-        </div>
-        <div class="promo">
-            <h2>Free delivery on orders over $50!</h2>
-            <p>Order now and save!</p>
+    <section id="dashboard" class="dashboard-container">
+        <h2>Welcome Back!</h2>
+        <div class="summary">
+            <div class="order-summary">
+                <h3>Recent Orders</h3>
+                <!-- Recent orders will be dynamically loaded -->
+            </div>
+            <div class="loyalty-summary">
+                <h3>Your Points</h3>
+                <p>Current Points: 120</p>
+                <button onclick="redeemPoints()">Redeem</button>
+            </div>
+            <div class="offers-summary">
+                <h3>Special Offers for You</h3>
+                <!-- Offers tailored to the user -->
+            </div>
         </div>
     </section>
 
     <section id="menu" class="menu-container">
         <h2>Our Menu</h2>
         <input type="text" id="search" placeholder="Search Menu..." onkeyup="filterMenu()">
+        <button onclick="startVoiceSearch()"><i class="fas fa-microphone"></i> Voice Search</button>
         <!-- Menu items -->
         <!-- More menu items to follow -->
+    </section>
+
+    <section id="wishlist" class="wishlist-container">
+        <h2>Your Wishlist</h2>
+        <!-- Wishlist items -->
     </section>
 
     <section id="offers" class="offer-container">
         <h2>Special Offers</h2>
         <!-- Offer items -->
-    </section>
-
-    <section id="reviews" class="review-container">
-        <h2>User Reviews</h2>
-        <!-- Reviews with avatars and star ratings -->
     </section>
 
     <section id="track">
@@ -88,7 +99,7 @@
             <a href="#" class="fab fa-twitter"></a>
             <a href="#" class="fab fa-instagram"></a>
         </div>
-        <p>&copy; 2024 Foodie Haven. All rights reserved.</p>
+        <p>&copy; 2024 Gourmet Bliss. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

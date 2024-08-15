@@ -1,30 +1,11 @@
-// Order tracking feature with progress bar
-function trackOrder() {
-    const orderId = document.getElementById('orderId').value;
-    const trackingDetails = document.getElementById('trackingDetails');
-    
-    if (orderId.trim() === '') {
-        trackingDetails.textContent = 'Please enter a valid Order ID.';
-        return;
-    }
-
-    // Simulated progress (in a real app, fetch order status from the server)
-    let progress = 0;
-    const progressInterval = setInterval(() => {
-        progress += 20;
-        trackingDetails.innerHTML = `Tracking Order #${orderId}: ${progress}% complete.`;
-
-        if (progress >= 100) {
-            clearInterval(progressInterval);
-            trackingDetails.innerHTML = `Order #${orderId} has been delivered!`;
-        }
-    }, 1000);
+// Theme and Language Settings
+function toggleSettings() {
+    const settingsPanel = document.getElementById('settings-panel');
+    settingsPanel.classList.toggle('hidden');
 }
 
-// Theme and Language Settings
 function changeTheme(theme) {
-    const body = document.body;
-    body.className = theme;
+    document.body.className = theme;
 }
 
 function changeLanguage(language) {
@@ -35,7 +16,42 @@ function changeLanguage(language) {
     });
 }
 
-// Simulated Push Notifications for order updates
+function startVoiceSearch() {
+    alert('Voice search initiated! Start speaking...');
+    // Placeholder for actual voice search functionality
+}
+
+function filterMenu() {
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        const itemName = item.querySelector('.item-name').textContent.toLowerCase();
+        item.style.display = itemName.includes(searchInput) ? '' : 'none';
+    });
+}
+
+function redeemPoints() {
+    alert('Points redeemed! Enjoy your discount!');
+}
+
+function trackOrder() {
+    const orderId = document.getElementById('orderId').value;
+    const trackingDetails = document.getElementById('trackingDetails');
+
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+        progress += 10 + Math.random() * 20;
+        trackingDetails.innerHTML = `Tracking Order #${orderId}: ${Math.min(progress, 100).toFixed(2)}% complete.`;
+
+        if (progress >= 100) {
+            clearInterval(progressInterval);
+            trackingDetails.innerHTML = `Order #${orderId} has been delivered!`;
+        }
+    }, 1000);
+}
+
+// Simulated In-App Notifications
 function simulateNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
@@ -49,3 +65,7 @@ function simulateNotification(message) {
         });
     }, 3000);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    simulateNotification('Welcome back! Check out our new offers.');
+});
